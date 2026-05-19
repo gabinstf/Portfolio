@@ -84,6 +84,24 @@ document.querySelectorAll('.p-content .p-grid').forEach((el, i) => {
 });
 
 
+/* ─── Parallax hero photo ─────────────────── */
+const heroPhoto = document.querySelector('.hero-photo');
+const heroSection = document.getElementById('hero');
+if (heroPhoto && heroSection && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  let ticking = false;
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > heroSection.offsetHeight) return;
+    if (!ticking) {
+      requestAnimationFrame(() => {
+        heroPhoto.style.transform = `scale(1.08) translateY(${-window.scrollY * 0.12}px)`;
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }, { passive: true });
+}
+
+
 /* ─── Active nav link ────────────────────── */
 const p = window.location.pathname;
 const currentPage = (p === '/' || p.endsWith('index.html')) ? 'index.html' : p.split('/').pop();
