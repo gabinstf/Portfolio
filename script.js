@@ -2,6 +2,22 @@
    WORKBYGABIN.COM — script.js
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 
+/* ─── Loader ──────────────────────────────── */
+const loader = document.getElementById('loader');
+if (loader) {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    loader.remove();
+  } else {
+    setTimeout(() => {
+      loader.classList.add('done');
+      loader.addEventListener('transitionend', e => {
+        if (e.propertyName === 'transform') loader.remove();
+      }, { once: true });
+    }, 900);
+  }
+}
+
+
 /* ─── Cursor personnalisé ─────────────────── */
 const cursor = document.getElementById('cursor');
 
