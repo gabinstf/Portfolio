@@ -3,6 +3,12 @@
    Unified stylesheet — remplace styles.css + projets.css
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 
+@property --loader-fill {
+  syntax: '<percentage>';
+  initial-value: 0%;
+  inherits: false;
+}
+
 /* ─── VARIABLES ────────────────────────────── */
 :root {
   --c-bg:      #1C1A1A;
@@ -124,11 +130,20 @@ img, video {
   font-size: clamp(72px, 18vw, 220px);
   font-weight: 900;
   letter-spacing: -0.04em;
-  color: var(--c-orange);
+  background: linear-gradient(to top, var(--c-white) var(--loader-fill), var(--c-orange) var(--loader-fill));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
   opacity: 0;
   transform: translateY(20px);
-  animation: fadeUp 0.55s var(--ease) 0.1s forwards;
+  animation:
+    fadeUp     0.4s  var(--ease)          0.1s forwards,
+    loaderFill 0.65s var(--ease)          0.5s forwards;
   transition: opacity 0.2s ease;
+}
+
+@keyframes loaderFill {
+  to { --loader-fill: 100%; }
 }
 
 #loader.done #loader-letter {
