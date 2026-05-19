@@ -93,7 +93,7 @@ if (heroPhoto && heroSection && !window.matchMedia('(prefers-reduced-motion: red
     if (window.scrollY > heroSection.offsetHeight) return;
     if (!ticking) {
       requestAnimationFrame(() => {
-        heroPhoto.style.transform = `scale(1.08) translateY(${-window.scrollY * 0.12}px)`;
+        heroPhoto.style.transform = `scale(1.15) translateY(${-window.scrollY * 0.12}px)`;
         ticking = false;
       });
       ticking = true;

@@ -350,7 +350,7 @@ img, video {
   height: 100%;
   width: auto;
   z-index: 0;
-  transform: scale(1.08);
+  transform: scale(1.15);
   transform-origin: right top;
   will-change: transform;
   -webkit-mask-image: linear-gradient(to right, transparent 0%, black 32%);
