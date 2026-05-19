@@ -62,6 +62,12 @@ if (galleryVideos.length) {
 }
 
 
+/* ─── Alternance auto texte/image sur pages projet ── */
+document.querySelectorAll('.p-content .p-grid').forEach((el, i) => {
+  if (i % 2 === 1) el.classList.add('reverse');
+});
+
+
 /* ─── Active nav link ────────────────────── */
 const currentPage = window.location.pathname.split('/').pop() || 'index.html';
 document.querySelectorAll('#nav .nav-links a').forEach(link => {
