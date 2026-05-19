@@ -481,8 +481,8 @@ img, video {
   margin-bottom: 64px;
 }
 
-.p-grid.reverse { direction: rtl; }
-.p-grid.reverse > * { direction: ltr; }
+.p-grid.reverse > :first-child { order: 2; }
+.p-grid.reverse > :last-child  { order: 1; }
 
 .p-label {
   font-size: 10px;
