@@ -282,7 +282,7 @@ img, video {
   height: 100%;
   width: clamp(320px, 55vw, 900px);
   object-fit: cover;
-  object-position: center top;
+  object-position: right top;
   z-index: 0;
   -webkit-mask-image: linear-gradient(to right, transparent 0%, black 32%);
   mask-image: linear-gradient(to right, transparent 0%, black 32%);
