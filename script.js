@@ -13,7 +13,7 @@ if (loader) {
       loader.addEventListener('transitionend', e => {
         if (e.propertyName === 'transform') loader.remove();
       }, { once: true });
-    }, 1200);
+    }, 800);
   }
 }
 
