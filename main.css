@@ -275,6 +275,18 @@ img, video {
   animation: fadeIn 1s var(--ease) 0.8s forwards;
 }
 
+.hero-photo {
+  position: absolute;
+  right: calc(var(--pad-x) + 28px);
+  top: calc(var(--nav-h) + 72px);
+  width: clamp(180px, 26vw, 360px);
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: var(--radius);
+  opacity: 0;
+  animation: fadeIn 1.2s var(--ease) 0.5s forwards;
+}
+
 
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
    MARQUEE
@@ -631,10 +643,28 @@ img, video {
 .about-hero {
   min-height: 70vh;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
+  flex-direction: row;
+  align-items: flex-end;
+  gap: 80px;
   padding: calc(var(--nav-h) + 80px) var(--pad-x) 72px;
   border-bottom: 1px solid var(--c-subtle);
+}
+
+.about-hero-content { flex: 1; min-width: 0; }
+
+.about-hero-photo-wrap {
+  flex-shrink: 0;
+  width: clamp(200px, 28vw, 380px);
+}
+
+.about-hero-photo {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: var(--radius);
+  display: block;
+  opacity: 0;
+  animation: fadeIn 1.2s var(--ease) 0.6s forwards;
 }
 
 .about-hero-eyebrow {
@@ -1027,8 +1057,12 @@ footer p {
   }
 
   .hero-scroll { display: none; }
+  .hero-photo  { display: none; }
 
   /* About */
+  .about-hero { flex-direction: column; gap: 40px; align-items: flex-start; }
+  .about-hero-photo-wrap { display: none; }
+
   .about-grid {
     grid-template-columns: 1fr;
     gap: 16px;
