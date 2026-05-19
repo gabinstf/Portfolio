@@ -652,28 +652,28 @@ img, video {
 .about-hero {
   min-height: 70vh;
   display: flex;
-  flex-direction: row;
-  align-items: flex-end;
-  gap: 80px;
+  flex-direction: column;
+  justify-content: flex-end;
   padding: calc(var(--nav-h) + 80px) var(--pad-x) 72px;
   border-bottom: 1px solid var(--c-subtle);
+  position: relative;
 }
 
-.about-hero-content { flex: 1; min-width: 0; }
-
-.about-hero-photo-wrap {
-  flex-shrink: 0;
-  width: clamp(200px, 28vw, 380px);
-}
+.about-hero-content { position: relative; z-index: 1; }
 
 .about-hero-photo {
-  width: 100%;
-  aspect-ratio: 1 / 1;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: clamp(320px, 55vw, 900px);
   object-fit: cover;
-  border-radius: var(--radius);
-  display: block;
+  object-position: right top;
+  z-index: 0;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 32%);
+  mask-image: linear-gradient(to right, transparent 0%, black 32%);
   opacity: 0;
-  animation: fadeIn 1.2s var(--ease) 0.6s forwards;
+  animation: fadeIn 1.4s var(--ease) 0.7s forwards;
 }
 
 .about-hero-eyebrow {
@@ -1069,8 +1069,7 @@ footer p {
   .hero-photo  { display: none; }
 
   /* About */
-  .about-hero { flex-direction: column; gap: 40px; align-items: flex-start; }
-  .about-hero-photo-wrap { display: none; }
+  .about-hero-photo { display: none; }
 
   .about-grid {
     grid-template-columns: 1fr;
