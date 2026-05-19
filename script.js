@@ -69,7 +69,8 @@ document.querySelectorAll('.p-content .p-grid').forEach((el, i) => {
 
 
 /* ─── Active nav link ────────────────────── */
-const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+const p = window.location.pathname;
+const currentPage = (p === '/' || p.endsWith('index.html')) ? 'index.html' : p.split('/').pop();
 document.querySelectorAll('#nav .nav-links a').forEach(link => {
   const href = link.getAttribute('href');
   if (href === currentPage) {

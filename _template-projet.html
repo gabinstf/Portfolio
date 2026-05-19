@@ -13,12 +13,19 @@
   ║  5. Ajouter/retirer des sections selon le projet             ║
   ║  6. Ajouter la tuile dans index.html (gallery)               ║
   ║                                                              ║
+  ║  CONVENTION NOMMAGE ASSETS                                   ║
+  ║  images/mon-projet-01.webp   (visuels)                       ║
+  ║  images/mon-projet-banner.webp  (hero image)                 ║
+  ║  images/mon-projet-tile.webp    (tuile galerie)              ║
+  ║  videos/mon-projet-01.mp4    (clips preview)                 ║
+  ║                                                              ║
   ║  CHECKLIST AVANT MISE EN LIGNE                               ║
-  ║  [ ] <title> mis à jour                                      ║
-  ║  [ ] meta description remplie                                ║
+  ║  [ ] <title> et meta description remplis                     ║
+  ║  [ ] .p-meta : année, contexte, domaine                      ║
   ║  [ ] Hero : vidéo ou image choisie                           ║
   ║  [ ] Toutes les sections remplies ou supprimées              ║
   ║  [ ] Lien YouTube ajouté (ou bloc résultat supprimé)         ║
+  ║  [ ] Navigation prev/next remplie                            ║
   ║  [ ] Tuile ajoutée dans index.html                           ║
   ╚══════════════════════════════════════════════════════════════╝
 -->
@@ -30,11 +37,13 @@
   NOM DU FICHIER   : mon-projet.html
   TITRE            : Nom du Projet
   CATÉGORIE        : Ex: Motion Design · Réalisation
+  ANNÉE            : 2025
+  CONTEXTE         : Perso · Universitaire · Professionnel
+  DOMAINE          : Vidéo · Design · Photo · Motion
   DESCRIPTION META : Courte description pour le SEO (150 car. max)
   HERO TYPE        : "video" ou "image"
-  HERO SOURCE      : Videos/mon-video.mp4  OU  Images/mon-image.webp
-  YOUTUBE ID       : Identifiant de la vidéo YouTube (ex: dQw4w9WgXcQ)
-                     Laisser vide si pas de vidéo finale YouTube
+  HERO SOURCE      : videos/mon-projet-01.mp4  OU  images/mon-projet-banner.webp
+  YOUTUBE ID       : Identifiant YouTube (ex: dQw4w9WgXcQ) — laisser vide si aucun
 -->
 
 <html lang="fr">
@@ -44,10 +53,8 @@
 
   <!-- ↓ MODIFIER : description du projet -->
   <meta name="description" content="[Description du projet — 150 caractères max]">
-  <meta property="og:title" content="[Titre du projet] — Gabin">
-  <meta property="og:description" content="[Description courte]">
 
-  <link rel="icon" type="image/svg+xml" href="Images/GLOBAL_logo_gabin.svg">
+  <link rel="icon" type="image/svg+xml" href="images/logo-gabin.svg">
   <link rel="stylesheet" href="main.css">
 
   <!-- ↓ MODIFIER : titre de l'onglet -->
@@ -75,22 +82,22 @@
   <header class="p-hero">
     <!-- ↓ MODIFIER : chemin de la vidéo -->
     <video autoplay loop muted playsinline>
-      <source src="Videos/NOM-DE-LA-VIDEO.mp4" type="video/mp4">
+      <source src="videos/mon-projet-01.mp4" type="video/mp4">
     </video>
     <div class="p-hero-overlay">
       <!-- ↓ MODIFIER : catégorie + titre -->
       <p class="p-hero-cat">Catégorie · Sous-catégorie</p>
-      <h1 class="p-hero-title">Nom du Projet</h1>
+      <h1 class="p-hero-title">Nom du<br>Projet</h1>
     </div>
   </header>
 
   <!-- ── Option B : Hero IMAGE (supprimer si vidéo) ── -->
   <!--
   <header class="p-hero">
-    <img src="Images/PROJET_nom-projet_banniere.webp" alt="[Description de l'image]">
+    <img src="images/mon-projet-banner.webp" alt="[Description de l'image]">
     <div class="p-hero-overlay">
       <p class="p-hero-cat">Catégorie · Sous-catégorie</p>
-      <h1 class="p-hero-title">Nom du Projet</h1>
+      <h1 class="p-hero-title">Nom du<br>Projet</h1>
     </div>
   </header>
   -->
@@ -101,80 +108,70 @@
   ════════════════════════════════════ -->
   <main class="p-content">
 
-    <!-- Lien retour galerie -->
     <a href="index.html#gallery" class="p-back">Retour aux projets</a>
 
+    <!-- ↓ MODIFIER : année · contexte · domaine -->
+    <p class="p-meta">2025 · Universitaire · Vidéo</p>
 
-    <!-- ── SECTION 1 : Présentation + Image (texte à gauche) ── -->
+
+    <!-- ── SECTION 1 : Présentation ── -->
     <div class="p-grid reveal">
       <div>
         <p class="p-label">Présentation</p>
         <h2 class="p-heading">Contexte du projet.</h2>
         <!-- ↓ MODIFIER : description du projet -->
         <p class="p-text">
-          [Décrire le contexte du projet : pour qui, dans quel cadre (scolaire, perso, client),
+          [Décrire le contexte : pour qui, dans quel cadre (scolaire, perso, client),
           quel était l'objectif. 3-5 phrases.]
         </p>
       </div>
       <div>
-        <!-- ↓ MODIFIER : chemin de l'image -->
-        <img class="p-img" src="Images/PROJET_nom-projet_archive1.webp" alt="[Description de l'image]" loading="lazy">
+        <!-- ↓ MODIFIER : chemin de l'image ou vidéo -->
+        <img class="p-img" src="images/mon-projet-01.webp" alt="[Description]" loading="lazy">
       </div>
     </div>
 
 
-    <!-- ── SECTION 2 : Image + Mon rôle (texte à droite) ── -->
+    <!-- ── SECTION 2 : Mon rôle ── -->
     <div class="p-grid reveal">
-      <div>
-        <!-- ↓ MODIFIER : chemin de l'image -->
-        <img class="p-img" src="Images/PROJET_nom-projet_archive2.webp" alt="[Description de l'image]" loading="lazy">
-      </div>
       <div>
         <p class="p-label">Mon rôle</p>
         <h2 class="p-heading">Ce que j'ai fait.</h2>
         <!-- ↓ MODIFIER : description du rôle -->
         <p class="p-text">
-          [Décrire précisément ce que tu as fait : réalisation, direction artistique, montage,
-          cadrage, design... Être spécifique sur les tâches accomplies.]
+          [Décrire précisément les tâches accomplies : réalisation, direction artistique,
+          montage, cadrage, design... Être spécifique.]
         </p>
+      </div>
+      <div>
+        <!-- ↓ MODIFIER : chemin de l'image ou vidéo -->
+        <img class="p-img" src="images/mon-projet-02.webp" alt="[Description]" loading="lazy">
       </div>
     </div>
 
 
-    <!-- ── SECTION 3 : Matériel / Outils + Image ── -->
+    <!-- ── SECTION 3 : Matériel / Outils ── -->
     <div class="p-grid reveal">
       <div>
         <p class="p-label">Matériel &amp; outils</p>
         <h2 class="p-heading">Stack technique.</h2>
         <!-- ↓ MODIFIER : liste des outils -->
         <p class="p-text">
-          [Lister le matériel et les logiciels utilisés : caméras, objectifs, drones,
+          [Lister le matériel et les logiciels utilisés : caméras, objectifs,
           logiciels de montage / design, équipement son, etc.]
         </p>
       </div>
       <div>
-        <!-- ↓ MODIFIER : chemin de l'image (optionnel, supprimer si inutile) -->
-        <img class="p-img" src="Images/PROJET_nom-projet_archive3.webp" alt="[Description de l'image]" loading="lazy">
+        <!-- ↓ MODIFIER : chemin de l'image ou vidéo -->
+        <img class="p-img" src="images/mon-projet-03.webp" alt="[Description]" loading="lazy">
       </div>
     </div>
 
 
-    <!-- ── GALERIE PHOTOS (optionnel — supprimer si inutile) ── -->
-    <!--
-    <div class="p-gallery reveal-stagger">
-      <img src="Images/PROJET_nom-projet_archive4.webp" alt="[Description]" loading="lazy">
-      <img src="Images/PROJET_nom-projet_archive5.webp" alt="[Description]" loading="lazy">
-      <img src="Images/PROJET_nom-projet_archive6.webp" alt="[Description]" loading="lazy">
-    </div>
-    -->
-
-
-    <div class="p-divider"></div>
-
+    <div class="p-divider reveal"></div>
 
     <!-- ── RÉSULTAT — Vidéo YouTube ── -->
-    <!-- ↓ MODIFIER : remplacer YOUTUBE_VIDEO_ID par l'identifiant YouTube -->
-    <!-- Supprimer ce bloc entier si pas de vidéo YouTube finale -->
+    <!-- Supprimer ce bloc si pas de vidéo YouTube finale -->
     <p class="p-result-label reveal">Résultat</p>
     <div class="p-embed-wrap reveal">
       <iframe
@@ -187,18 +184,18 @@
     </div>
 
 
-    <!-- ── NAVIGATION BAS DE PAGE ── -->
-    <!-- ↓ MODIFIER : liens vers le projet précédent et suivant -->
-    <div class="p-nav-bottom reveal">
-      <a href="PROJET-PRECEDENT.html" class="p-nav-link prev">
-        <span class="p-nav-link-label">← Projet précédent</span>
-        <span class="p-nav-link-title">Nom du projet précédent</span>
+    <!-- ── NAVIGATION PREV / NEXT ── -->
+    <!-- ↓ MODIFIER : fichiers + noms des projets adjacents -->
+    <nav class="p-nav-bottom reveal">
+      <a href="projet-precedent.html" class="p-nav-link p-nav-prev">
+        <span class="p-nav-arrow">←</span>
+        <span class="p-nav-title">Nom du projet précédent</span>
       </a>
-      <a href="PROJET-SUIVANT.html" class="p-nav-link next">
-        <span class="p-nav-link-label">Projet suivant →</span>
-        <span class="p-nav-link-title">Nom du projet suivant</span>
+      <a href="projet-suivant.html" class="p-nav-link p-nav-next">
+        <span class="p-nav-title">Nom du projet suivant</span>
+        <span class="p-nav-arrow">→</span>
       </a>
-    </div>
+    </nav>
 
   </main>
 
@@ -207,11 +204,9 @@
   <footer>
     <div class="footer-logos">
       <a href="index.html" title="Gabin">
-        <img class="footer-logo" src="Images/GLOBAL_logo_gabin.svg" alt="Logo Gabin">
+        <img class="footer-logo" src="images/logo-gabin.svg" alt="Logo Gabin">
       </a>
-      <a href="https://wayro.nova-corp.fr" target="_blank" rel="noopener" title="NOVA Corporation">
-        <img class="footer-logo" src="Images/GLOBAL_logo_nova-corporation.svg" alt="Logo NOVA Corporation">
-      </a>
+      <img class="footer-logo" src="images/logo-nova-corp.svg" alt="Logo NOVA Corporation">
     </div>
     <p>© 2025 – 2026 Gabin Stiff Tartereau, sous NOVA Corporation</p>
   </footer>
@@ -231,7 +226,7 @@
   ── Tuile VIDÉO ──
   <a class="project [wide|tall|rien]" href="mon-projet.html">
     <video autoplay loop muted playsinline>
-      <source src="Videos/mon-clip-preview.mp4" type="video/mp4">
+      <source src="videos/mon-projet-preview.mp4" type="video/mp4">
     </video>
     <div class="project-overlay">
       <span class="project-cat">Catégorie</span>
@@ -241,7 +236,7 @@
 
   ── Tuile IMAGE ──
   <a class="project [wide|tall|rien]" href="mon-projet.html">
-    <img src="Images/PROJET_mon-projet_tile_image.webp" alt="Nom du Projet" loading="lazy">
+    <img src="images/mon-projet-tile.webp" alt="Nom du Projet" loading="lazy">
     <div class="project-overlay">
       <span class="project-cat">Catégorie</span>
       <h3 class="project-name">Nom du Projet</h3>
