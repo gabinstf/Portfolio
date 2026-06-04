@@ -726,6 +726,14 @@ img, video {
 
 .p-reel-card:hover .p-reel-cta span { transform: translate(3px, -3px); }
 
+/* Vidéo résultat locale (pleine largeur, ratio naturel) */
+.p-video-result {
+  width: 100%;
+  border-radius: var(--radius);
+  display: block;
+  margin-bottom: 64px;
+}
+
 /* Bloc "Résultat" avec label */
 .p-result-label {
   font-size: 11px;
