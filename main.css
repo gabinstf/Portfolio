@@ -726,6 +726,22 @@ img, video {
 
 .p-reel-card:hover .p-reel-cta span { transform: translate(3px, -3px); }
 
+/* Embed LinkedIn (post centré) */
+.p-embed-linkedin {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 64px;
+}
+
+.p-embed-linkedin iframe {
+  width: 100%;
+  max-width: 550px;
+  height: 680px;
+  border: 1px solid var(--c-subtle);
+  border-radius: var(--radius);
+  background: var(--c-surface);
+}
+
 /* Vidéo résultat locale (pleine largeur, ratio naturel) */
 .p-video-result {
   width: 100%;
