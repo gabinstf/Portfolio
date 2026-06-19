@@ -64,15 +64,21 @@ if (revealEls.length) {
 }
 
 
-/* ─── Gallery — pause vidéos hors viewport ─── */
+/* ─── Gallery — lazy-load + pause vidéos hors viewport ─── */
 const galleryVideos = document.querySelectorAll('#gallery video');
 
 if (galleryVideos.length) {
   const vObserver = new IntersectionObserver(entries => {
     entries.forEach(({ target, isIntersecting }) => {
-      isIntersecting ? target.play().catch(() => {}) : target.pause();
+      if (isIntersecting) {
+        /* Injecte la source au premier passage seulement */
+        if (!target.src && target.dataset.src) target.src = target.dataset.src;
+        target.play().catch(() => {});
+      } else {
+        target.pause();
+      }
     });
-  }, { threshold: 0.05 });
+  }, { threshold: 0.05, rootMargin: '200px 0px' });
 
   galleryVideos.forEach(v => vObserver.observe(v));
 }
