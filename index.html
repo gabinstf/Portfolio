@@ -65,9 +65,29 @@
     </div>
   </div>
 
+  <div class="gallery-bar">
+    <div class="gallery-filter">
+      <button type="button" class="gallery-filter-trigger" aria-haspopup="listbox" aria-expanded="false">
+        <span class="gallery-filter-label">Toutes les années</span>
+        <span class="gallery-filter-arrow" aria-hidden="true"></span>
+      </button>
+      <ul class="gallery-filter-list" role="listbox" aria-label="Filtrer par année">
+        <li class="gallery-filter-option is-selected" role="option" tabindex="0" data-value="all" aria-selected="true">Toutes les années</li>
+        <li class="gallery-filter-option" role="option" tabindex="0" data-value="2026" aria-selected="false">2026</li>
+        <li class="gallery-filter-option" role="option" tabindex="0" data-value="2025" aria-selected="false">2025</li>
+        <li class="gallery-filter-option" role="option" tabindex="0" data-value="2024" aria-selected="false">2024</li>
+      </ul>
+    </div>
+    <div class="gallery-toggle" role="group" aria-label="Filtrer les projets">
+      <button type="button" class="gallery-toggle-btn" data-filter="pro" aria-pressed="true">Professionnels</button>
+      <button type="button" class="gallery-toggle-btn" data-filter="academique" aria-pressed="false">Académiques</button>
+      <span class="gallery-toggle-thumb" aria-hidden="true"></span>
+    </div>
+  </div>
+
   <main id="gallery">
 
-    <a class="project wide" href="trailer-jpo-mmi.html">
+    <a class="project wide" data-category="academique" data-year="2025" href="trailer-jpo-mmi.html">
       <video autoplay loop muted playsinline>
         <source src="videos/trailer-jpo-mmi-01.mp4" type="video/mp4">
       </video>
@@ -77,7 +97,7 @@
       </div>
     </a>
 
-    <a class="project wide" href="bookibox-corporate-apec.html">
+    <a class="project wide" data-category="pro" data-year="2026" href="bookibox-corporate-apec.html">
       <video autoplay loop muted playsinline>
         <source src="videos/bookibox-corporate-apec-01.mp4" type="video/mp4">
       </video>
@@ -87,7 +107,7 @@
       </div>
     </a>
 
-    <a class="project" href="bookibox-stop-motion.html">
+    <a class="project" data-category="pro" data-year="2026" href="bookibox-stop-motion.html">
       <video autoplay loop muted playsinline>
         <source src="videos/bookibox-stop-motion-01.mp4" type="video/mp4">
       </video>
@@ -97,7 +117,7 @@
       </div>
     </a>
 
-    <a class="project" href="bookibox-shooting-produit.html">
+    <a class="project" data-category="pro" data-year="2026" href="bookibox-shooting-produit.html">
       <video autoplay loop muted playsinline>
         <source src="videos/bookibox-shooting-produit-01.mp4" type="video/mp4">
       </video>
@@ -107,7 +127,7 @@
       </div>
     </a>
 
-    <a class="project tall" href="bookibox-contenus-courts.html">
+    <a class="project tall" data-category="pro" data-year="2026" href="bookibox-contenus-courts.html">
       <video autoplay loop muted playsinline>
         <source src="videos/bookibox-contenus-courts-01.mp4" type="video/mp4">
       </video>
@@ -117,7 +137,7 @@
       </div>
     </a>
 
-    <a class="project wide" href="clip-burano2barcelona.html">
+    <a class="project wide" data-category="pro" data-year="2025" href="clip-burano2barcelona.html">
       <video autoplay loop muted playsinline>
         <source src="videos/clip-burano2barcelona-01.mp4" type="video/mp4">
       </video>
@@ -127,7 +147,7 @@
       </div>
     </a>
 
-    <a class="project" href="cd-aether.html">
+    <a class="project" data-category="pro" data-year="2025" href="cd-aether.html">
       <video autoplay loop muted playsinline>
         <source src="videos/cd-aether.mp4" type="video/mp4">
       </video>
@@ -137,7 +157,7 @@
       </div>
     </a>
 
-    <a class="project tall" href="affiche-marseille.html">
+    <a class="project tall" data-category="academique" data-year="2024" href="affiche-marseille.html">
       <img src="images/affiche-marseille-tile.webp" alt="Affiche sur Marseille" loading="lazy">
       <div class="project-overlay">
         <span class="project-cat">Illustration · Design</span>
@@ -145,7 +165,7 @@
       </div>
     </a>
 
-    <a class="project tall" href="pub-dullac.html">
+    <a class="project tall" data-category="academique" data-year="2025" href="pub-dullac.html">
       <video autoplay loop muted playsinline>
         <source src="videos/pub-dullac-01.mp4" type="video/mp4">
       </video>
@@ -155,7 +175,7 @@
       </div>
     </a>
 
-    <a class="project wide" href="trailer-osmo-create.html">
+    <a class="project wide" data-category="academique" data-year="2025" href="trailer-osmo-create.html">
       <video autoplay loop muted playsinline>
         <source src="videos/trailer-osmo-create-01.mp4" type="video/mp4">
       </video>
@@ -165,7 +185,7 @@
       </div>
     </a>
 
-    <a class="project wide" href="clip-stf-jam.html">
+    <a class="project wide" data-category="pro" data-year="2025" href="clip-stf-jam.html">
       <video autoplay loop muted playsinline>
         <source src="videos/clip-stf-jam-01.mp4" type="video/mp4">
       </video>
@@ -175,7 +195,7 @@
       </div>
     </a>
 
-    <a class="project" href="joy-banque-etudiante.html">
+    <a class="project" data-category="academique" data-year="2024" href="joy-banque-etudiante.html">
       <img src="images/joy-banque-etudiante-banner.webp" alt="Joy — Banque Étudiante" loading="lazy">
       <div class="project-overlay">
         <span class="project-cat">Identité Visuelle</span>
@@ -183,7 +203,7 @@
       </div>
     </a>
 
-    <a class="project wide" href="logo-osmo-create.html">
+    <a class="project wide" data-category="academique" data-year="2025" href="logo-osmo-create.html">
       <video autoplay loop muted playsinline>
         <source src="videos/logo-osmo-create-motion.mp4" type="video/mp4">
       </video>
@@ -193,7 +213,7 @@
       </div>
     </a>
 
-    <a class="project wide" href="karting-ecole-champions.html">
+    <a class="project wide" data-category="academique" data-year="2024" href="karting-ecole-champions.html">
       <video autoplay loop muted playsinline>
         <source src="videos/karting-ecole-champions-01.mp4" type="video/mp4">
       </video>
@@ -203,7 +223,7 @@
       </div>
     </a>
 
-    <a class="project wide" href="teaser-osmo-create.html">
+    <a class="project wide" data-category="academique" data-year="2025" href="teaser-osmo-create.html">
       <video autoplay loop muted playsinline>
         <source src="videos/teaser-osmo-create-preview.mp4" type="video/mp4">
       </video>
@@ -212,6 +232,8 @@
         <h3 class="project-name">Teaser Osmo Create</h3>
       </div>
     </a>
+
+    <p class="gallery-empty">Aucun projet pour cette sélection.</p>
 
   </main>
 
