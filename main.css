@@ -802,6 +802,84 @@ img, video {
   border-radius: var(--radius);
 }
 
+/* Médias intégrés (vidéos / images en pleine colonne) */
+.p-media {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius);
+  background: var(--c-surface);
+}
+
+/* Déclinaisons — bloc carré : stories (1:2) à gauche, 2 covers (1:1) empilées à droite */
+.p-decl {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--gap);
+  margin-bottom: 64px;
+}
+
+.p-decl-tall {
+  grid-row: span 2;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Archives inédites — 2 colonnes légendées */
+.p-archives {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px 72px;
+  align-items: start;
+  margin-bottom: 64px;
+}
+
+.p-cap {
+  margin-top: 14px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--c-orange);
+}
+
+.p-archive-desc {
+  margin-top: 6px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--c-dim);
+}
+
+.p-archive-desc em {
+  color: var(--c-white);
+  font-style: normal;
+  font-weight: 600;
+}
+
+/* Sections de texte pleine largeur — centrées pour un appui éditorial */
+.p-section-intro {
+  max-width: 820px;
+  margin: 0 auto 48px;
+  text-align: center;
+}
+
+/* Texte aligné vers l'image qui lui fait face */
+.p-grid .p-label,
+.p-grid .p-heading,
+.p-grid .p-text {
+  text-align: right;   /* texte à gauche, image à droite */
+}
+
+.p-grid.reverse .p-label,
+.p-grid.reverse .p-heading,
+.p-grid.reverse .p-text {
+  text-align: left;    /* grille inversée : texte à droite, image à gauche */
+}
+
+@media (max-width: 768px) {
+  .p-archives { grid-template-columns: 1fr; }
+}
+
 /* Vidéo embed (YouTube / iframe) */
 .p-embed-wrap {
   position: relative;
@@ -1407,6 +1485,11 @@ footer p {
   }
 
   .p-grid.reverse { direction: ltr; }
+
+  /* Sur mobile (1 colonne), tout le texte repasse aligné à gauche */
+  .p-grid .p-label,
+  .p-grid .p-heading,
+  .p-grid .p-text { text-align: left; }
 
   .p-gallery { grid-template-columns: 1fr 1fr; }
 

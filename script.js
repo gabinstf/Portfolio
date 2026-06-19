@@ -64,8 +64,8 @@ if (revealEls.length) {
 }
 
 
-/* ─── Gallery — lazy-load + pause vidéos hors viewport ─── */
-const galleryVideos = document.querySelectorAll('#gallery video');
+/* ─── Lazy-load + pause vidéos hors viewport (galerie + pages projet) ─── */
+const galleryVideos = document.querySelectorAll('video[data-src]');
 
 if (galleryVideos.length) {
   const vObserver = new IntersectionObserver(entries => {
