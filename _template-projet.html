@@ -25,7 +25,8 @@
   ║  [ ] Hero : vidéo ou image choisie                           ║
   ║  [ ] Toutes les sections remplies ou supprimées              ║
   ║  [ ] Lien YouTube ajouté (ou bloc résultat supprimé)         ║
-  ║  [ ] Navigation prev/next remplie                            ║
+  ║  [ ] Navigation prev/next remplie (chaîne de sa catégorie)    ║
+  ║  [ ] Pages voisines mises à jour (← plus récent / → ancien)   ║
   ║  [ ] Tuile ajoutée dans index.html                           ║
   ╚══════════════════════════════════════════════════════════════╝
 -->
@@ -185,14 +186,25 @@
 
 
     <!-- ── NAVIGATION PREV / NEXT ── -->
-    <!-- ↓ MODIFIER : fichiers + noms des projets adjacents -->
-    <nav class="p-nav-bottom reveal">
-      <a href="projet-precedent.html" class="p-nav-link p-nav-prev">
+    <!-- Deux chaînes distinctes : pro et académique, dans l'ordre de la galerie.
+         ← = projet plus récent de la même catégorie (au-dessus dans la galerie)
+         → = projet plus ancien de la même catégorie (en dessous)
+         Aux extrémités, remplacer le lien par :
+         <span class="p-nav-link p-nav-empty" aria-hidden="true"></span> -->
+    <!-- ↓ MODIFIER : aria-label, fichiers + noms des projets adjacents -->
+    <nav class="p-nav-bottom reveal" aria-label="Projets académiques">
+      <a href="projet-plus-recent.html" class="p-nav-link p-nav-prev">
         <span class="p-nav-arrow">←</span>
-        <span class="p-nav-title">Nom du projet précédent</span>
+        <span class="p-nav-text">
+          <span class="p-nav-dir">Plus récent</span>
+          <span class="p-nav-title">Nom du projet plus récent</span>
+        </span>
       </a>
-      <a href="projet-suivant.html" class="p-nav-link p-nav-next">
-        <span class="p-nav-title">Nom du projet suivant</span>
+      <a href="projet-plus-ancien.html" class="p-nav-link p-nav-next">
+        <span class="p-nav-text">
+          <span class="p-nav-dir">Plus ancien</span>
+          <span class="p-nav-title">Nom du projet plus ancien</span>
+        </span>
         <span class="p-nav-arrow">→</span>
       </a>
     </nav>

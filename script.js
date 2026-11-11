@@ -28,7 +28,7 @@ if (cursor && window.matchMedia('(pointer: fine)').matches) {
   });
 
   /* Expand sur les éléments interactifs */
-  document.querySelectorAll('a, button, .gallery-filter-option, .project, .skill-tag, .contact-item, .nova-block').forEach(el => {
+  document.querySelectorAll('a, button, .gallery-filter-option, .project, .skill-tag, .tool, .contact-item, .nova-block').forEach(el => {
     el.addEventListener('mouseenter', () => cursor.classList.add('expand'));
     el.addEventListener('mouseleave', () => cursor.classList.remove('expand'));
   });

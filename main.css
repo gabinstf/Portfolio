@@ -1038,8 +1038,25 @@ img, video {
 .p-nav-link:hover .p-nav-title,
 .p-nav-link:hover .p-nav-arrow { color: var(--c-orange); }
 
+.p-nav-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.p-nav-dir {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--c-dim);
+}
+
+.p-nav-empty { flex: 1; }
+
 .p-nav-prev:hover .p-nav-arrow { transform: translateX(-4px); }
 .p-nav-next { text-align: right; }
+.p-nav-next .p-nav-text { align-items: flex-end; }
 .p-nav-next:hover .p-nav-arrow { transform: translateX(4px); }
 
 
@@ -1224,6 +1241,74 @@ img, video {
   color: var(--c-orange);
   background: var(--c-orange-glow);
 }
+
+/* Groupes Logiciels / Terrain / Savoir-faire */
+.skills-group { margin-top: 36px; }
+
+.skills-group-label {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--c-orange);
+  margin-bottom: 14px;
+}
+
+/* Grille logiciels avec logos */
+.tools-grid {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+@media (max-width: 600px) {
+  .tools-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+.tool {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 28px 10px 22px;
+  border: 1px solid var(--c-subtle);
+  color: var(--c-dim);
+  transition: border-color var(--t-fast), color var(--t-fast), background var(--t-fast);
+}
+
+.tool-icon {
+  width: 30px;
+  height: 30px;
+  fill: currentColor;
+  transition: transform var(--t-fast) var(--ease);
+}
+
+.tool-icon--stroke {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 3.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.tool-name {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1.3;
+}
+
+.tool:hover {
+  border-color: var(--c-orange);
+  color: var(--c-orange);
+  background: var(--c-orange-glow);
+}
+
+.tool:hover .tool-icon { transform: translateY(-2px); }
 
 /* Bloc musique / Nova Corp */
 .nova-block {
@@ -1495,6 +1580,8 @@ footer p {
 
   .p-nav-bottom { flex-direction: column; gap: 24px; align-items: flex-start; }
   .p-nav-next { text-align: left; }
+  .p-nav-next .p-nav-text { align-items: flex-start; }
+  .p-nav-empty { display: none; }
 
   footer {
     flex-direction: column;
